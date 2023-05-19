@@ -1,31 +1,29 @@
-import os
-import time
-request_file = 'requests/1mb.json'
+from multiprocessing import Process
+from receive import receive_multiple
+from publish import publish_multiple
+from misc import create_topic, subscribe
 
-import json
+request_file = 'data/requests/1mb.json'
+topic = 'topic1'
 
-id = 1
+def main():
+    create_topic(topic)
+    id = subscribe(topic)
+    no_of_iterations = 500
+    publish_multiple(topic, request_file, no_of_iterations)
+    print('publish done')
+    receive_multiple(id, topic, no_of_iterations)
+    print('receive done')
 
-with open(request_file, 'r+') as f:
-    data = json.load(f)
-    data['id'] = id
-    f.seek(0)
-    json.dump(data, f, indent=4)
-    f.truncate()
+    # publish_process = Process(target=publish_multiple, args=(topic, request_file, 100,))
+    # publish_process.start()
 
-os.system('curl localhost:5000/topic/topic1 -X POST')
-os.system('curl localhost:5000/subscription/topic1 -X POST')
+    # receive_process = Process(target=receive_multiple, args=(id, topic, 100,))
+    # receive_process.start()
 
-start = time.time()
-os.system(f'curl localhost:5000/publish/topic1 -H "Content-Type: application/json" -X POST -d @{request_file}')
-end = time.time()
-delta = end - start
-print(f'delta publish: {delta}')
+    # publish_process.join()
+    # receive_process.join()
 
 
-start = time.time()
-os.system(f'curl localhost:5000/subscription/topic1/0 -X GET >> /dev/null')
-end = time.time()
-delta = end - start
-print(f'delta receive: {delta}')
-
+if __name__ == "__main__":
+    main()
