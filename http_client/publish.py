@@ -2,13 +2,12 @@ import json
 import os
 import time
 import requests
-from benchmark_constants import BENCHMARK_FILE
 
-def publish_multiple(topic: str, request_file: str, no: int=1):
+def publish_multiple(topic: str, request_file: str, benchmark_file: str, no: int=1):
     for i in range(no):
-        publish(topic, request_file, i)
+        publish(topic, request_file, benchmark_file, i)
 
-def publish(topic: str, request_file: str, id: int):
+def publish(topic: str, request_file: str, benchmark_file: str, id: int):
     with open(request_file, 'r+') as f:
         data = json.load(f)
         data['benchmark_id'] = id
@@ -19,4 +18,4 @@ def publish(topic: str, request_file: str, id: int):
     start = time.time()
     with open(request_file, "rb") as f:
         requests.post(f'http://localhost:5000/publish/{topic}', headers={'Content-Type': 'application/json'}, data=f)
-    os.system(f'echo {start},{id} >> data/benchmarks/publish/{BENCHMARK_FILE}')
+    os.system(f'echo {start},{id} >> data/benchmarks/publish/{benchmark_file}')
