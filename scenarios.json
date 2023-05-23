@@ -1,0 +1,143 @@
+{
+    "latency_by_no_of_messages": [
+        {
+            "file_path": "data/requests/1b.json",
+            "no_of_requests": 52428800,
+            "total_size": "50mb"
+        },
+        {
+            "file_path": "data/requests/256b.json",
+            "no_of_requests": 204800,
+            "total_size": "50mb"
+        },
+        {
+            "file_path": "data/requests/1kb.json",
+            "no_of_requests": 51200,
+            "total_size": "50mb"
+        },
+        {
+            "file_path": "data/requests/256kb.json",
+            "no_of_requests": 200,
+            "total_size": "50mb"
+        },
+        {
+            "file_path": "data/requests/1mb.json",
+            "no_of_requests": 50,
+            "total_size": "50mb"
+        }
+    ],
+    "latency_by_message_size": [
+        {
+            "file_path": "data/requests/1b.json",
+            "no_of_requests": 500,
+            "total_size": "500b"
+        },
+        {
+            "file_path": "data/requests/256b.json",
+            "no_of_requests": 500,
+            "total_size": "125kb"
+        },
+        {
+            "file_path": "data/requests/1kb.json",
+            "no_of_requests": 500,
+            "total_size": "500kb"
+        },
+        {
+            "file_path": "data/requests/256kb.json",
+            "no_of_requests": 500,
+            "total_size": "125mb"
+        },
+        {
+            "file_path": "data/requests/1mb.json",
+            "no_of_requests": 500,
+            "total_size": "500mb"
+        }
+    ],
+    "throughput": [
+        {
+            "file_path": "data/requests/1b.json",
+            "spin_offs": [
+                {
+                    "no_of_requests": 50000,
+                    "total_size": "48.82kb"
+                },
+                {
+                    "no_of_requests": 500000,
+                    "total_size": "488.28kb"
+                },
+                {
+                    "no_of_requests": 5000000,
+                    "total_size": "4.76mb"
+                }
+            ]
+        },
+        {
+            "file_path": "data/requests/256b.json",
+            "spin_offs": [
+                {
+                    "no_of_requests": 50000,
+                    "total_size": "12.20mb"
+                },
+                {
+                    "no_of_requests": 500000,
+                    "total_size": "122.07mb"
+                },
+                {
+                    "no_of_requests": 5000000,
+                    "total_size": "1.19gb"
+                }
+            ]
+        },
+        {
+            "file_path": "data/requests/1kb.json",
+            "spin_offs": [
+                {
+                    "no_of_requests": 5000,
+                    "total_size": "4.88mb"
+                },
+                {
+                    "no_of_requests": 50000,
+                    "total_size": "48.82mb"
+                },
+                {
+                    "no_of_requests": 500000,
+                    "total_size": "488.28mb"
+                }
+            ]
+        },
+        {
+            "file_path": "data/requests/256kb.json",
+            "spin_offs": [
+                {
+                    "no_of_requests": 50,
+                    "total_size": "12.5mb"
+                },
+                {
+                    "no_of_requests": 500,
+                    "total_size": "125mb"
+                },
+                {
+                    "no_of_requests": 5000,
+                    "total_size": "1.22gb"
+                }
+            ]
+        },
+        {
+            "file_path": "data/requests/1mb.json",
+            "spin_offs": [
+                {
+                    "no_of_requests": 5,
+                    "total_size": "5mb"
+                },
+                {
+                    "no_of_requests": 50,
+                    "total_size": "50mb"
+                },
+                {
+                    "no_of_requests": 500,
+                    "total_size": "500mb"
+                }
+            ]
+        }
+    ]
+}
