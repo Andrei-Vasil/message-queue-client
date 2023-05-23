@@ -1,29 +1,32 @@
-from multiprocessing import Process
-from receive import receive_multiple
-from publish import publish_multiple
-from misc import create_topic, subscribe
+import json
+from methodologies import Methodologies
+from benchmark_constants import CODING_LANGUAGE, REQUEST_FILES
 
-REQUEST_FILE = 'data/requests/1kb.json'
 TOPIC = 'topic1'
 
 def main():
-    create_topic(TOPIC)
-    id = subscribe(TOPIC)
-    no_of_iterations = 500
-    publish_multiple(TOPIC, REQUEST_FILE, no_of_iterations)
-    print('publish done')
-    receive_multiple(id, TOPIC, no_of_iterations)
-    print('receive done')
+    with open('scenarios.json') as f:
+        scenarios = dict(json.load(f))
+        for scenario_key, scenario in scenarios.items():
+            if scenario_key != 'throughput':
+                benchmark_latency(scenario)
+            else:
+                benchmark_throughput(scenario)
 
-    # publish_process = Process(target=publish_multiple, args=(topic, request_file, 100,))
-    # publish_process.start()
+def benchmark_latency(scenarios: list[dict]):
+    for scenario in scenarios:
+        file_path = scenario['file_path']
+        no_of_requests = scenario['no_of_requests']
+        total_size = scenario['total_size']
 
-    # receive_process = Process(target=receive_multiple, args=(id, topic, 100,))
-    # receive_process.start()
+def benchmark_throughput(scenarios: list[dict]):
+    pass
 
-    # publish_process.join()
-    # receive_process.join()
-
+def call_all_methodologies(file_path: str, no_of_requests: int, total_size: str):
+    Methodologies.one2one(file_path, no_of_requests, total_size)
+    Methodologies.one2many(file_path, no_of_requests, total_size)
+    Methodologies.many2one(file_path, no_of_requests, total_size)
+    Methodologies.many2many(file_path, no_of_requests, total_size)
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
-for i in {1..32768}
+for i in {1..8192}
 do
-    echo $RANDOM | md5sum | head -c 32 >> gen.txt;
+    echo $RANDOM | md5sum | head -c 32 >> data/gen.txt;
 done
-echo >> gen.txt;
+echo >> data/gen.txt;

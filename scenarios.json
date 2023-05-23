@@ -3,54 +3,64 @@
         {
             "file_path": "data/requests/1b.json",
             "no_of_requests": 52428800,
-            "total_size": "50mb"
+            "total_size": "50mb",
+            "id": "latency_by_no_of_messages_1b"
         },
         {
             "file_path": "data/requests/256b.json",
             "no_of_requests": 204800,
-            "total_size": "50mb"
+            "total_size": "50mb",
+            "id": "latency_by_no_of_messages_256b"
         },
         {
             "file_path": "data/requests/1kb.json",
             "no_of_requests": 51200,
-            "total_size": "50mb"
+            "total_size": "50mb",
+            "id": "latency_by_no_of_messages_1kb"
         },
         {
             "file_path": "data/requests/256kb.json",
             "no_of_requests": 200,
-            "total_size": "50mb"
+            "total_size": "50mb",
+            "id": "latency_by_no_of_messages_256kb"
         },
         {
             "file_path": "data/requests/1mb.json",
             "no_of_requests": 50,
-            "total_size": "50mb"
+            "total_size": "50mb",
+            "id": "latency_by_no_of_messages_1mb"
         }
     ],
     "latency_by_message_size": [
         {
             "file_path": "data/requests/1b.json",
             "no_of_requests": 500,
-            "total_size": "500b"
+            "total_size": "500b",
+            "id": "latency_by_message_size_1b"
         },
         {
             "file_path": "data/requests/256b.json",
             "no_of_requests": 500,
-            "total_size": "125kb"
+            "total_size": "125kb",
+            "id": "latency_by_message_size_256b"
         },
         {
             "file_path": "data/requests/1kb.json",
             "no_of_requests": 500,
-            "total_size": "500kb"
+            "total_size": "500kb",
+            "id": "latency_by_message_size_1kb"
         },
         {
             "file_path": "data/requests/256kb.json",
             "no_of_requests": 500,
-            "total_size": "125mb"
+            "total_size": "125mb",
+            "id": "latency_by_message_size_256kb"
         },
         {
             "file_path": "data/requests/1mb.json",
             "no_of_requests": 500,
-            "total_size": "500mb"
+            "total_size": "500mb",
+            "id": "latency_by_message_size_1mb"
         }
     ],
     "throughput": [
@@ -59,15 +69,18 @@
             "spin_offs": [
                 {
                     "no_of_requests": 50000,
-                    "total_size": "48.82kb"
+                    "total_size": "48.82kb",
+                    "id": "throughput_1b_50k"
                 },
                 {
                     "no_of_requests": 500000,
-                    "total_size": "488.28kb"
+                    "total_size": "488.28kb",
+                    "id": "throughput_1b_500k"
                 },
                 {
                     "no_of_requests": 5000000,
-                    "total_size": "4.76mb"
+                    "total_size": "4.76mb",
+                    "id": "throughput_1b_5mil"
                 }
             ]
         },
@@ -76,15 +89,18 @@
             "spin_offs": [
                 {
                     "no_of_requests": 50000,
-                    "total_size": "12.20mb"
+                    "total_size": "12.20mb",
+                    "id": "throughput_256b_50k"
                 },
                 {
                     "no_of_requests": 500000,
-                    "total_size": "122.07mb"
+                    "total_size": "122.07mb",
+                    "id": "throughput_256b_500k"
                 },
                 {
                     "no_of_requests": 5000000,
-                    "total_size": "1.19gb"
+                    "total_size": "1.19gb",
+                    "id": "throughput_256b_5mil"
                 }
             ]
         },
@@ -93,15 +109,18 @@
             "spin_offs": [
                 {
                     "no_of_requests": 5000,
-                    "total_size": "4.88mb"
+                    "total_size": "4.88mb",
+                    "id": "throughput_1kb_5k"
                 },
                 {
                     "no_of_requests": 50000,
-                    "total_size": "48.82mb"
+                    "total_size": "48.82mb",
+                    "id": "throughput_1kb_50k"
                 },
                 {
                     "no_of_requests": 500000,
-                    "total_size": "488.28mb"
+                    "total_size": "488.28mb",
+                    "id": "throughput_1kb_500k"
                 }
             ]
         },
@@ -110,15 +129,18 @@
             "spin_offs": [
                 {
                     "no_of_requests": 50,
-                    "total_size": "12.5mb"
+                    "total_size": "12.5mb",
+                    "id": "throughput_256kb_50"
                 },
                 {
                     "no_of_requests": 500,
-                    "total_size": "125mb"
+                    "total_size": "125mb",
+                    "id": "throughput_256kb_500"
                 },
                 {
                     "no_of_requests": 5000,
-                    "total_size": "1.22gb"
+                    "total_size": "1.22gb",
+                    "id": "throughput_256kb_5k"
                 }
             ]
         },
@@ -127,15 +149,18 @@
             "spin_offs": [
                 {
                     "no_of_requests": 5,
-                    "total_size": "5mb"
+                    "total_size": "5mb",
+                    "id": "throughput_1mb_5"
                 },
                 {
                     "no_of_requests": 50,
-                    "total_size": "50mb"
+                    "total_size": "50mb",
+                    "id": "throughput_1mb_50"
                 },
                 {
                     "no_of_requests": 500,
-                    "total_size": "500mb"
+                    "total_size": "500mb",
+                    "id": "throughput_1mb_500"
                 }
             ]
         }

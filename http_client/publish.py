@@ -1,8 +1,7 @@
-import datetime
 import json
 import os
 import time
-
+import requests
 from benchmark_constants import BENCHMARK_FILE
 
 def publish_multiple(topic: str, request_file: str, no: int=1):
@@ -18,6 +17,6 @@ def publish(topic: str, request_file: str, id: int):
         f.truncate()
 
     start = time.time()
-    os.system(f'curl localhost:5000/publish/{topic} -H "Content-Type: application/json" -X POST -d @{request_file}')
+    with open(request_file, "rb") as f:
+        requests.post(f'http://localhost:5000/publish/{topic}', headers={'Content-Type': 'application/json'}, data=f)
     os.system(f'echo {start},{id} >> data/benchmarks/publish/{BENCHMARK_FILE}')
-
