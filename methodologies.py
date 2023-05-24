@@ -1,13 +1,9 @@
 import os
 import time
-from benchmark_constants import CODING_LANGUAGE
+from benchmark_constants import CODING_LANGUAGE, ONE, TOPIC
 from http_client.misc import create_topic, subscribe, unsubscribe, delete_topic
 from http_client.publish import publish_multiple
 from http_client.receive import receive_multiple
-
-TOPIC: str = 'topic1'
-ONE: int = 1
-MANY: int = 5
 
 class Methodologies:
     @staticmethod

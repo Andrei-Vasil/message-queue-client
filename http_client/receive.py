@@ -1,8 +1,6 @@
 import os
 import time
 
-from http_client.misc import subscribe, unsubscribe
-
 def receive_multiple(client_id: int, topic: str, benchmark_file: str, scenario_id: str, no: int=1):
     for _ in range(no):
         receive(client_id, topic, benchmark_file, scenario_id)

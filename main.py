@@ -1,8 +1,6 @@
 import json
 from methodologies import Methodologies
 
-TOPIC = 'topic1'
-
 def main():
     with open('scenarios.json') as f:
         scenarios = dict(json.load(f))
