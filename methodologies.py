@@ -23,7 +23,7 @@ class Methodologies:
             prod_pids.append(pid)
         for pid in prod_pids:
             os.waitpid(pid, 0)
-        os.system(f'echo "Producer {id}-{CODING_LANGUAGE} Total time: {time.time() - t1}" >> data/benchmarks/total_time.txt')
+        os.system(f'echo "Producer {id}-{CODING_LANGUAGE} {no_of_producers}to{no_of_clients} Total size: {total_size} Total time: {time.time() - t1}" >> data/benchmarks/total_time.txt')
         print('finish write', time.time() - t1)
 
         t2 = time.time()
@@ -36,7 +36,7 @@ class Methodologies:
             recv_pids.append(pid)
         for pid in recv_pids:
             os.waitpid(pid, 0)
-        os.system(f'echo "Consumer {id}-{CODING_LANGUAGE} Total time: {time.time() - t1}" >> data/benchmarks/total_time.txt')
+        os.system(f'echo "Consumer {id}-{CODING_LANGUAGE} {no_of_producers}to{no_of_clients} Total size: {total_size} Total time: {time.time() - t1}" >> data/benchmarks/total_time.txt')
         print('finish read', time.time() - t2)
 
         for client_id in client_ids:
