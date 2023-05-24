@@ -23,9 +23,9 @@ def benchmark_throughput(scenarios: list[dict]):
         file_path = scenario['file_path']
         spin_offs = list(scenario['spin_offs'])
         for spin_off in spin_offs:
-            id = scenario['id']
-            no_of_requests = int(scenario['no_of_requests'])
-            total_size = scenario['total_size']
+            id = spin_off['id']
+            no_of_requests = int(spin_off['no_of_requests'])
+            total_size = spin_off['total_size']
             call_all_methodologies(id, file_path, no_of_requests, total_size)
 
 
