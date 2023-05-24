@@ -9,18 +9,25 @@ def main():
                 benchmark_latency(scenario)
             else:
                 benchmark_throughput(scenario)
-            break
 
 def benchmark_latency(scenarios: list[dict]):
     for scenario in scenarios:
         id = scenario['id']
         file_path = scenario['file_path']
-        no_of_requests = scenario['no_of_requests']
+        no_of_requests = int(scenario['no_of_requests'])
         total_size = scenario['total_size']
         call_all_methodologies(id, file_path, no_of_requests, total_size)
 
 def benchmark_throughput(scenarios: list[dict]):
-    pass
+    for scenario in scenarios:
+        file_path = scenario['file_path']
+        spin_offs = list(scenario['spin_offs'])
+        for spin_off in spin_offs:
+            id = scenario['id']
+            no_of_requests = int(scenario['no_of_requests'])
+            total_size = scenario['total_size']
+            call_all_methodologies(id, file_path, no_of_requests, total_size)
+
 
 def call_all_methodologies(id: str, file_path: str, no_of_requests: int, total_size: str):
     Methodologies.one2one(f'one2one_{id}', file_path, no_of_requests, total_size)
