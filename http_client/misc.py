@@ -7,7 +7,7 @@ def create_topic(topic: str):
     os.system(f'curl -s localhost:5000/topic/{topic} -X POST >> /dev/null')
 
 def delete_topic(topic: str):
-    os.system(f'curl -s localhost:5000/topic/{topic} -X POST >> /dev/null')
+    os.system(f'curl -s localhost:5000/topic/{topic} -X DELETE >> /dev/null')
 
 def subscribe(topic: str) -> int:
     random_token = ''.join(random.choice([*string.digits, *string.ascii_letters]) for _ in range(10))
