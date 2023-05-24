@@ -7,7 +7,7 @@ from http_client.receive import receive_multiple
 
 class Methodologies:
     @staticmethod
-    def __general(id: str, file_path: str, no_of_requests: int, total_size: str, no_of_clients: int, no_of_producers: int):
+    def __general(id: str, file_path: str, no_of_requests: int, total_size: str, no_of_producers: int, no_of_clients: int):
         benchmark_file = f'{id}-{CODING_LANGUAGE}.csv'
 
         create_topic(TOPIC)
@@ -15,29 +15,29 @@ class Methodologies:
 
         t1 = time.time()
         prod_pids = []
-        for _ in range(no_of_producers):
+        for producer_idx in range(no_of_producers):
             pid = os.fork()
             if pid == 0:
-                publish_multiple(TOPIC, file_path, benchmark_file, id, no=no_of_requests // no_of_producers)
+                publish_multiple(TOPIC, f'data/requests/{producer_idx}/{file_path}', benchmark_file, id, no=no_of_requests // no_of_producers, start=producer_idx * (no_of_requests // no_of_producers))
                 exit(0)
             prod_pids.append(pid)
         for pid in prod_pids:
             os.waitpid(pid, 0)
         os.system(f'echo "Producer {id}-{CODING_LANGUAGE} Total time: {time.time() - t1}" >> data/benchmarks/total_time.txt')
-        print("finish write", time.time() - t1)
+        print('finish write', time.time() - t1)
 
         t2 = time.time()
         recv_pids = []
         for client_id in client_ids:
             pid = os.fork()
             if pid == 0:
-                receive_multiple(client_id, TOPIC, benchmark_file, id, no=no_of_requests // no_of_clients)
+                receive_multiple(client_id, TOPIC, benchmark_file, id, no=no_of_requests)
                 exit(0)
             recv_pids.append(pid)
         for pid in recv_pids:
             os.waitpid(pid, 0)
         os.system(f'echo "Consumer {id}-{CODING_LANGUAGE} Total time: {time.time() - t1}" >> data/benchmarks/total_time.txt')
-        print("finish read", time.time() - t2)
+        print('finish read', time.time() - t2)
 
         for client_id in client_ids:
             unsubscribe(TOPIC, client_id)

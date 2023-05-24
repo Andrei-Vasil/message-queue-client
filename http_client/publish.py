@@ -3,8 +3,8 @@ import os
 import time
 import requests
 
-def publish_multiple(topic: str, request_file: str, benchmark_file: str, scenario_id: str, no: int=1):
-    for i in range(no):
+def publish_multiple(topic: str, request_file: str, benchmark_file: str, scenario_id: str, no: int=1, start: int=0):
+    for i in range(start, start + no):
         publish(topic, request_file, benchmark_file, scenario_id, i)
 
 def publish(topic: str, request_file: str, benchmark_file: str, scenario_id: str, id: int):
