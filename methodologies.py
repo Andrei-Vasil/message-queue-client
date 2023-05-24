@@ -1,6 +1,6 @@
 import os
 import time
-from benchmark_constants import CODING_LANGUAGE, ONE, TOPIC
+from benchmark_constants import CODING_LANGUAGE, MANY, ONE, TOPIC
 from http_client.misc import create_topic, subscribe, unsubscribe, delete_topic
 from http_client.publish import publish_multiple
 from http_client.receive import receive_multiple
@@ -50,12 +50,12 @@ class Methodologies:
 
     @staticmethod
     def one2many(id: str, file_path: str, no_of_requests: int, total_size: str):
-        pass
+        Methodologies.__general(id, file_path, no_of_requests, total_size, ONE, MANY)
 
     @staticmethod
     def many2one(id: str, file_path: str, no_of_requests: int, total_size: str):
-        pass
+        Methodologies.__general(id, file_path, no_of_requests, total_size, MANY, ONE)
 
     @staticmethod
     def many2many(id: str, file_path: str, no_of_requests: int, total_size: str):
-        pass
+        Methodologies.__general(id, file_path, no_of_requests, total_size, MANY, MANY)
