@@ -2,32 +2,32 @@
     "latency_by_no_of_messages": [
         {
             "file_path": "data/requests/1b.json",
-            "no_of_requests": 52428800,
-            "total_size": "50mb",
+            "no_of_requests": 5120,
+            "total_size": "5kb",
             "id": "latency_by_no_of_messages_1b"
         },
         {
             "file_path": "data/requests/256b.json",
-            "no_of_requests": 204800,
-            "total_size": "50mb",
+            "no_of_requests": 20,
+            "total_size": "5kb",
             "id": "latency_by_no_of_messages_256b"
         },
         {
             "file_path": "data/requests/1kb.json",
-            "no_of_requests": 51200,
-            "total_size": "50mb",
+            "no_of_requests": 5120,
+            "total_size": "5mb",
             "id": "latency_by_no_of_messages_1kb"
         },
         {
             "file_path": "data/requests/256kb.json",
-            "no_of_requests": 200,
-            "total_size": "50mb",
+            "no_of_requests": 20,
+            "total_size": "5mb",
             "id": "latency_by_no_of_messages_256kb"
         },
         {
             "file_path": "data/requests/1mb.json",
-            "no_of_requests": 50,
-            "total_size": "50mb",
+            "no_of_requests": 5,
+            "total_size": "5mb",
             "id": "latency_by_no_of_messages_1mb"
         }
     ],
@@ -68,18 +68,18 @@
             "file_path": "data/requests/1b.json",
             "spin_offs": [
                 {
-                    "no_of_requests": 50000,
-                    "total_size": "48.82kb",
+                    "no_of_requests": 50,
+                    "total_size": "50b",
                     "id": "throughput_1b_50k"
                 },
                 {
-                    "no_of_requests": 500000,
-                    "total_size": "488.28kb",
+                    "no_of_requests": 500,
+                    "total_size": "500b",
                     "id": "throughput_1b_500k"
                 },
                 {
-                    "no_of_requests": 5000000,
-                    "total_size": "4.76mb",
+                    "no_of_requests": 5000,
+                    "total_size": "4.88kb",
                     "id": "throughput_1b_5mil"
                 }
             ]
@@ -88,18 +88,18 @@
             "file_path": "data/requests/256b.json",
             "spin_offs": [
                 {
-                    "no_of_requests": 50000,
-                    "total_size": "12.20mb",
+                    "no_of_requests": 50,
+                    "total_size": "12.5kb",
                     "id": "throughput_256b_50k"
                 },
                 {
-                    "no_of_requests": 500000,
-                    "total_size": "122.07mb",
+                    "no_of_requests": 500,
+                    "total_size": "125kb",
                     "id": "throughput_256b_500k"
                 },
                 {
-                    "no_of_requests": 5000000,
-                    "total_size": "1.19gb",
+                    "no_of_requests": 5000,
+                    "total_size": "1.22mb",
                     "id": "throughput_256b_5mil"
                 }
             ]
@@ -108,18 +108,18 @@
             "file_path": "data/requests/1kb.json",
             "spin_offs": [
                 {
-                    "no_of_requests": 5000,
-                    "total_size": "4.88mb",
+                    "no_of_requests": 50,
+                    "total_size": "50kb",
                     "id": "throughput_1kb_5k"
                 },
                 {
-                    "no_of_requests": 50000,
-                    "total_size": "48.82mb",
+                    "no_of_requests": 500,
+                    "total_size": "500kb",
                     "id": "throughput_1kb_50k"
                 },
                 {
-                    "no_of_requests": 500000,
-                    "total_size": "488.28mb",
+                    "no_of_requests": 5000,
+                    "total_size": "4.88mb",
                     "id": "throughput_1kb_500k"
                 }
             ]
