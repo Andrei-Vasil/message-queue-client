@@ -5,6 +5,8 @@ def main():
     with open('scenarios.json') as f:
         scenarios = dict(json.load(f))
         for scenario_key, scenario in scenarios.items():
+            if scenario_key != 'latency_by_message_size':
+                continue
             if scenario_key != 'throughput':
                 benchmark_latency(scenario)
             else:

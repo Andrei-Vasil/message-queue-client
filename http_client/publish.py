@@ -16,6 +16,10 @@ def publish(topic: str, request_file: str, benchmark_file: str, scenario_id: str
         f.truncate()
 
     start = time.time()
-    with open(request_file, "rb") as f:
-        requests.post(f'http://localhost:5000/publish/{topic}/{scenario_id}', headers={'Content-Type': 'application/json'}, data=f)
+    try:
+        with open(request_file, "r") as f:
+            body = json.load(f)
+            requests.post(f'http://localhost:5000/publish/{topic}/{scenario_id}', headers={'Content-Type': 'application/json'}, json=body)
+    except Exception as e:
+        os.system(f'curl -s localhost:5000/publish/{topic}/{scenario_id} -H "Content-Type: application/json" -X POST -d @{request_file} >> /dev/null')
     os.system(f'echo {start},{id} >> data/benchmarks/publish/{benchmark_file}')

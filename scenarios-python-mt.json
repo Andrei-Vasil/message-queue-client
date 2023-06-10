@@ -1,0 +1,60 @@
+{
+    "latency_by_no_of_messages": [
+        {
+            "file_path": "256kb.json",
+            "no_of_requests": 20,
+            "total_size": "5mb",
+            "id": "latency_by_no_of_messages_256kb"
+        },
+        {
+            "file_path": "1mb.json",
+            "no_of_requests": 5,
+            "total_size": "5mb",
+            "id": "latency_by_no_of_messages_1mb"
+        }
+    ],
+    "latency_by_message_size": [
+        {
+            "file_path": "1b.json",
+            "no_of_requests": 50,
+            "total_size": "50b",
+            "id": "latency_by_message_size_1b"
+        },
+        {
+            "file_path": "256b.json",
+            "no_of_requests": 50,
+            "total_size": "12.5kb",
+            "id": "latency_by_message_size_256b"
+        },
+        {
+            "file_path": "1kb.json",
+            "no_of_requests": 50,
+            "total_size": "50kb",
+            "id": "latency_by_message_size_1kb"
+        },
+        {
+            "file_path": "256kb.json",
+            "no_of_requests": 50,
+            "total_size": "12.5mb",
+            "id": "latency_by_message_size_256kb"
+        },
+        {
+            "file_path": "1mb.json",
+            "no_of_requests": 50,
+            "total_size": "50mb",
+            "id": "latency_by_message_size_1mb"
+        }
+    ],
+    "throughput": [
+        {
+            "file_path": "1mb.json",
+            "spin_offs": [
+                {
+                    "no_of_requests": 100,
+                    "total_size": "100mb",
+                    "id": "throughput_1mb_100"
+                }
+            ]
+        }
+    ]
+}
